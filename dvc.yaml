@@ -8,7 +8,7 @@ stages:
       - artifacts/data_ingestion/PetImages
 
   prepare_base_model:
-    cmd: src/deepClassifier/pipeline/stage_02_prepare_base_model.py
+    cmd: python src/deepClassifier/pipeline/stage_02_prepare_base_model.py
     deps:
       - src/deepClassifier/pipeline/stage_02_prepare_base_model.py
       - configs/config.yaml
@@ -22,7 +22,7 @@ stages:
       - artifacts/prepare_base_model
 
   training:
-    cmd: src/deepClassifier/pipeline/stage_03_training.py
+    cmd: python src/deepClassifier/pipeline/stage_03_training.py
     deps:
       - src/deepClassifier/pipeline/stage_03_training.py
       - src/deepClassifier/components/prepare_callbacks.py
@@ -38,7 +38,7 @@ stages:
       - artifacts/training/model.h5
 
   evaluation:
-    cmd: src/deepClassifier/pipeline/stage_04_evaluation.py
+    cmd: python src/deepClassifier/pipeline/stage_04_evaluation.py
     deps:
       - src/deepClassifier/pipeline/stage_04_evaluation.py
       - configs/config.yaml
