@@ -29,7 +29,7 @@ stages:
       - configs/config.yaml
       - artifacts/data_ingestion/PetImages
       - artifacts/prepare_base_model
-    parmas:
+    params:
       - IMAGE_SIZE
       - EPOCHS
       - BATCH_SIZE
